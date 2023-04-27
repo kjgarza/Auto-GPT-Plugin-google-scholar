@@ -1,8 +1,9 @@
-"""This is a template for Auto-GPT plugins."""
+"""this is a autogpt plugin for Google scholar"""
 import abc
 from typing import Any, Dict, List, Optional, Tuple, TypeVar, TypedDict
 
 from abstract_singleton import AbstractSingleton, Singleton
+from google_scholar_plugin import GoogleScholarPlugin
 
 PromptGenerator = TypeVar("PromptGenerator")
 
@@ -12,16 +13,16 @@ class Message(TypedDict):
     content: str
 
 
-class AutoGPTPluginTemplate(AbstractSingleton, metaclass=Singleton):
+class AutoGPTPluginGoogleScholar(AbstractSingleton, metaclass=Singleton):
     """
-    This is a template for Auto-GPT plugins.
+    google scholar integration using scholarly
     """
 
     def __init__(self):
         super().__init__()
-        self._name = "Auto-GPT-Plugin-Template"
+        self._name = "Auto-GPT-Plugin-google-scholar"
         self._version = "0.1.0"
-        self._description = "This is a template for Auto-GPT plugins."
+        self._description = "google scholar integration using scholarly"
 
     @abc.abstractmethod
     def can_handle_on_response(self) -> bool:
@@ -57,7 +58,19 @@ class AutoGPTPluginTemplate(AbstractSingleton, metaclass=Singleton):
         Returns:
             PromptGenerator: The prompt generator.
         """
-        pass
+        if self.load_commands:
+            # Add Google Scholar Search command
+            prompt.add_command(
+                "Google Scholar Search",
+                "google_scholar_plugin",
+                {"keyword": "<keyword>"},
+                GoogleScholarPlugin.execute,
+            )
+        else:
+            print(
+                "Warning: Google Scholar Search is not fully functional. "
+            )
+        return prompt
 
     @abc.abstractmethod
     def can_handle_on_planning(self) -> bool:
