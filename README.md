@@ -1,33 +1,40 @@
-# Auto-GPT-Plugin-Template
-A starting point for developing your own external plug-in for Auto-GPT
 
-# **If you want your plugin to live within the codebase, use the example in the [plugins repo](https://github.com/Significant-Gravitas/Auto-GPT-Plugins) instead**
+# Google Scholar Plugin
 
-### Plugin Installation Steps
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-1. **Clone or download the plugin repository:**
-   Clone the plugin repository, or download the repository as a zip file.
-  
-   ![Download Zip](https://raw.githubusercontent.com/BillSchumacher/Auto-GPT/master/plugin.png)
+A plugin for AutoGPT that searches Google Scholar and returns results in a JSON structure.
 
-2. **Install the plugin's dependencies (if any):**
-   Navigate to the plugin's folder in your terminal, and run the following command to install any required dependencies:
+## Installation
 
-   ``` shell
-      pip install -r requirements.txt
-   ```
+To install the package, use the following command:
 
-3. **Package the plugin as a Zip file:**
-   If you cloned the repository, compress the plugin folder as a Zip file.
+```bash
+pip install google-scholar-plugin
+```
 
-4. **Copy the plugin's Zip file:**
-   Place the plugin's Zip file in the `plugins` folder of the Auto-GPT repository.
+## Usage
 
-5. **Allowlist the plugin (optional):**
-   Add the plugin's class name to the `ALLOWLISTED_PLUGINS` in the `.env` file to avoid being prompted with a warning when loading the plugin:
+To use the Google Scholar Plugin, follow the steps below:
 
-   ``` shell
-   ALLOWLISTED_PLUGINS=example-plugin1,example-plugin2,example-plugin3
-   ```
+1. Import the package:
 
-   If the plugin is not allowlisted, you will be warned before it's loaded.
+```python
+import google_scholar_plugin
+```
+
+2. Use the functions provided by the package to interact with Google Scholar and obtain search results.
+
+## Contributing
+
+Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) before getting started.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
+## Acknowledgements
+
+- AutoGPT project
+- Google Scholar
