@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: "google-scholar-plugin"
+version: "0.0.1"
+date-released: "2023-04-29"
+repository-code: "https://github.com/kjgarza/google-scholar-plugin"
+license: "MIT"
+url: "https://github.com/kjgarza/google-scholar-plugin"
+authors:
+  - family-names: "Garza"
+    given-names: "Kristian"
+    email: "kj.garza@gmail.com"
+    orcid: "https://orcid.org/0000-0000-0000-0000" # Replace with the actual ORCID if available
+abstract: "A plugin for AutoGPT that searches Google Scholar and returns results in a JSON structure."
+keywords:
+  - Google Scholar
+  - AutoGPT
+  - Plugin
+  - JSON
+  - Python
