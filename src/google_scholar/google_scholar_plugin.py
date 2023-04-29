@@ -1,4 +1,4 @@
-from google_scholar_search import GoogleScholarSearch
+from .google_scholar_search import GoogleScholarSearch
 
 class GoogleScholarPlugin:
     def __init__(self):

@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import MagicMock, patch
-from google_scholar_search import GoogleScholarSearch
+from .google_scholar_search import GoogleScholarSearch
 
 class TestGoogleScholarSearch(unittest.TestCase):
     def test_search(self):

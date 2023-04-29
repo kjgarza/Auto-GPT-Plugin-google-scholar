@@ -3,7 +3,7 @@ import abc
 from typing import Any, Dict, List, Optional, Tuple, TypeVar, TypedDict
 
 from abstract_singleton import AbstractSingleton, Singleton
-from google_scholar_plugin import GoogleScholarPlugin
+from .google_scholar_plugin import GoogleScholarPlugin
 
 PromptGenerator = TypeVar("PromptGenerator")
 

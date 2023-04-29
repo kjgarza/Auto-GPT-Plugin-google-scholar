@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import MagicMock, patch
-from google_scholar_plugin import GoogleScholarPlugin
-from google_scholar_search import GoogleScholarSearch
+from .google_scholar_plugin import GoogleScholarPlugin
+from .google_scholar_search import GoogleScholarSearch
 
 class TestGoogleScholarPlugin(unittest.TestCase):
     def test_execute(self):
