@@ -1,5 +1,9 @@
 from .google_scholar_search import GoogleScholarSearch
 
+from . import AutoGPTPluginGoogleScholar
+
+plugin = AutoGPTPluginGoogleScholar()
+
 class GoogleScholarPlugin:
     def __init__(self):
         self.google_scholar_search = GoogleScholarSearch()
