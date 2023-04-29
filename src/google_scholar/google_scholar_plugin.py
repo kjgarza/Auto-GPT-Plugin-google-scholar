@@ -5,4 +5,4 @@ class GoogleScholarPlugin:
         self.google_scholar_search = GoogleScholarSearch()
 
     def execute(self, keyword: str):
-        return self.google_scholar_search.search(keyword)
+        return self.google_scholar_search.search(keyword, limit=10)

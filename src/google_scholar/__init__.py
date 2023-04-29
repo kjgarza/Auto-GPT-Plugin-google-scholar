@@ -64,7 +64,7 @@ class AutoGPTPluginGoogleScholar(AbstractSingleton, metaclass=Singleton):
                 "Google Scholar Search",
                 "google_scholar_plugin",
                 {"keyword": "<keyword>"},
-                GoogleScholarPlugin.execute,
+                GoogleScholarPlugin().execute,
             )
         else:
             print(

@@ -5,19 +5,18 @@ from google_scholar_search import GoogleScholarSearch
 class TestGoogleScholarSearch(unittest.TestCase):
     def test_search(self):
         # Mock the Google Scholar API response
-        mock_response = [
-            {
+        mock_response = {
                 'title': 'Test Title',
-                'abstract': 'Test Abstract',
+                'description': 'Test Abstract',
                 'url': 'https://example.com',
                 'doi': '10.1234/example'
             }
-        ]
+        
 
-        with patch('scholarly.search_pubs', return_value=mock_response):
+        with patch.object(GoogleScholarSearch,'_extract_data', return_value=mock_response):
             google_scholar_search = GoogleScholarSearch()
             keyword = 'test keyword'
-            results = google_scholar_search.search(keyword)
+            results = google_scholar_search.search(keyword, limit=1)
 
         expected_results = [
             {
