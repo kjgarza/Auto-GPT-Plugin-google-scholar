@@ -4,7 +4,9 @@ from scholarly import ProxyGenerator
 
 class GoogleScholarSearch:
     def search(self, keyword, limit=1):
-        self._generate_proxy()
+        if self._generate_proxy() == False:
+            return []
+
         search_results = scholarly.search_pubs(keyword)
         formatted_results = []
         counter = 0
@@ -31,5 +33,5 @@ class GoogleScholarSearch:
 
     def _generate_proxy(self):
         pg = ProxyGenerator()
-        pg.FreeProxies()
+        pg.FreeProxies(timeout=1, wait_time=120)
         scholarly.use_proxy(pg)
