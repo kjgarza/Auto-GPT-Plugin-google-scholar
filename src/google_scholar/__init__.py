@@ -1,7 +1,6 @@
 """this is a autogpt plugin for Google scholar"""
 from typing import Any, Dict, List, Optional, Tuple, TypeVar, TypedDict
 from auto_gpt_plugin_template import AutoGPTPluginTemplate
-# from .google_scholar_plugin import GoogleScholarPlugin
 
 PromptGenerator = TypeVar("PromptGenerator")
 
@@ -52,19 +51,14 @@ class AutoGPTPluginGoogleScholar(AutoGPTPluginTemplate):
         Returns:
             PromptGenerator: The prompt generator.
         """
-        if self.load_commands:
-            from .google_scholar_plugin import GoogleScholarPlugin
-            # Add Google Scholar Search command
-            prompt.add_command(
-                "Google Scholar Search",
-                "google_scholar_plugin",
-                {"keyword": "<keyword>"},
-                GoogleScholarPlugin().execute,
-            )
-        else:
-            print(
-                "Warning: Google Scholar Search is not fully functional. "
-            )
+        from .google_scholar_plugin import GoogleScholarPlugin
+        # Add Google Scholar Search command
+        prompt.add_command(
+            "google_scholar_query",
+            "Search Academic Articles in Google Scholar",
+            {"keyword": "<keyword>"},
+            GoogleScholarPlugin().execute,
+        )
         return prompt
 
     def can_handle_on_planning(self) -> bool:

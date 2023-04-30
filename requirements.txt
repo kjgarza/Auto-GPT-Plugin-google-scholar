@@ -7,4 +7,5 @@ wheel
 setuptools
 build
 twine
+auto_gpt_plugin_template
 scholarly
