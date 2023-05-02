@@ -56,7 +56,10 @@ class AutoGPTPluginGoogleScholar(AutoGPTPluginTemplate):
         prompt.add_command(
             "google_scholar_query",
             "Search Academic Articles in Google Scholar",
-            {"keyword": "<keyword>"},
+            {
+                "keyword": "<keyword>",
+                "limit": "<limit>"
+            },
             GoogleScholarPlugin().execute,
         )
         return prompt
