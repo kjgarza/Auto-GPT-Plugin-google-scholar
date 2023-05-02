@@ -7,10 +7,11 @@ A plugin for AutoGPT that searches Google Scholar and returns results in a JSON 
 
 ## Installation
 
-To install the package, use the following command:
+To install in AutoGPT, copy the zipped repository into the `/plugins` folder in AutoGPT and add the name of the plugin in the .env file: 
+
 
 ```bash
-pip install google-scholar-plugin
+ALLOWLISTED_PLUGINS=AutoGPTPluginGoogleScholar
 ```
 
 ## Usage
