@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='google-scholar-plugin',
-    version='0.0.1',
+    version='0.1.0',
     description='A plugin for AutoGPT that searches Google Scholar and returns results in a JSON structure.',
     author='Kristian Garza',
     author_email='kj.garza@gmail.com',
