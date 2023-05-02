@@ -10,7 +10,7 @@ authors:
   - family-names: "Garza"
     given-names: "Kristian"
     email: "kj.garza@gmail.com"
-    orcid: "https://orcid.org/0000-0000-0000-0000" # Replace with the actual ORCID if available
+    orcid: "https://orcid.org/0000-0003-3484-6875" # Replace with the actual ORCID if available
 abstract: "A plugin for AutoGPT that searches Google Scholar and returns results in a JSON structure."
 keywords:
   - Google Scholar
