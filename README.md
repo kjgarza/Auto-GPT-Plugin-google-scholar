@@ -16,15 +16,14 @@ ALLOWLISTED_PLUGINS=AutoGPTPluginGoogleScholar
 
 ## Usage
 
-To use the Google Scholar Plugin, follow the steps below:
+AutoGPT will use the command 'google_scholar_query' to find academic publications in google scholar.
 
-1. Import the package:
-
-```python
-import google_scholar_plugin
+```bash
+17. message_agent: Message GPT Agent, args: "key": "<key>", "message": "<message>"
+18. start_agent: Start GPT Agent, args: "name": "<name>", "task": "<short_task_desc>", "prompt": "<prompt>"
+19. Task Complete (Shutdown): "task_complete", args: "reason": "<reason>"
+20. google_scholar_query: "Search Academic Articles in Google Scholar", args: "keyword": "<keyword>", "limit": "<limit>"
 ```
-
-2. Use the functions provided by the package to interact with Google Scholar and obtain search results.
 
 ## Contributing
 
