@@ -3,7 +3,7 @@ from scholarly import ProxyGenerator
 
 
 class GoogleScholarSearch:
-    def search(self, keyword, limit=1):
+    def search(self, keyword, limit):
         if self._generate_proxy() == False:
             return []
 
