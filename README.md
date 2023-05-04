@@ -14,6 +14,13 @@ To install in AutoGPT, copy the zipped repository into the `/plugins` folder in 
 ALLOWLISTED_PLUGINS=AutoGPTPluginGoogleScholar
 ```
 
+You will also need to run the [Run the dependency install script for plugins](https://github.com/Significant-Gravitas/Auto-GPT-Plugins#installation)
+
+```bash
+python -m autogpt --install-plugin-deps
+```
+
+
 ## Usage
 
 AutoGPT will use the command 'google_scholar_query' to find academic publications in google scholar.
