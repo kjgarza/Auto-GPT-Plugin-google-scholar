@@ -1,6 +1,6 @@
 from scholarly import scholarly
 from scholarly import ProxyGenerator
-
+import json
 
 class GoogleScholarSearch:
     def search(self, keyword, limit):
@@ -19,13 +19,13 @@ class GoogleScholarSearch:
             else:
                 break
 
-        return formatted_results
+        return json.dumps(formatted_results, indent=4, ensure_ascii=False)
 
     def _extract_data(self, result):
         bib = result.get('bib', {})
         data = {
             'title': bib.get('title', {}),
-            'description': bib.get('abstract', {}),
+            'description': bib.get('abstract', {}).replace('\n', ' ').replace('\r', ' ').replace('\t', ' ').strip(),
             'url': result.get('eprint_url', ''),
             'doi': result.get('pub_url', '')
         }
