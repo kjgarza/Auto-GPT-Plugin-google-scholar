@@ -8,7 +8,7 @@ class GoogleScholarPlugin:
     def __init__(self):
         self.google_scholar_search = GoogleScholarSearch()
 
-    def execute(self, keyword: str, limit: int = 10):
+    def execute(self, keyword: str, limit: int = 10, format: str = 'text'):
         """
         Search Academic Articles in Google Scholar
         Args:
@@ -17,5 +17,5 @@ class GoogleScholarPlugin:
         Returns:
                 str: The resulting response in JSON format.
         """
-        return self.google_scholar_search.search(keyword, int(limit))
+        return self.google_scholar_search._format_response(self.google_scholar_search.search(keyword, int(limit)) , format)
 
