@@ -1,24 +1,22 @@
 import unittest
 from unittest.mock import MagicMock, patch
-from .google_scholar_plugin import GoogleScholarPlugin
-from .google_scholar_search import GoogleScholarSearch
+from src.google_scholar.google_scholar_search import GoogleScholarSearch
 
-class TestGoogleScholarPlugin(unittest.TestCase):
-    def test_execute(self):
-        # Mock the search results from GoogleScholarSearch
-        mock_results = [
-            {
+class TestGoogleScholarSearch(unittest.TestCase):
+    def test_search(self):
+        # Mock the Google Scholar API response
+        mock_response = {
                 'title': 'Test Title',
                 'description': 'Test Abstract',
                 'url': 'https://example.com',
                 'doi': '10.1234/example'
             }
-        ]
+        
 
-        with patch.object(GoogleScholarSearch, 'search', return_value=mock_results):
-            google_scholar_plugin = GoogleScholarPlugin()
+        with patch.object(GoogleScholarSearch,'_extract_data', return_value=mock_response):
+            google_scholar_search = GoogleScholarSearch()
             keyword = 'test keyword'
-            results = google_scholar_plugin.execute(keyword)
+            results = google_scholar_search.search(keyword, limit=1)
 
         expected_results = [
             {
